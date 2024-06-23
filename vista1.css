@@ -1,0 +1,83 @@
+body {
+    background-color: blue;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.encriptador {
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+    width: 50%;
+    padding: 70px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-radius: 3px;
+}
+
+
+.botones {
+    background-color: #120b77;
+    width: 420px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: space-between;
+    padding-top: 20px;
+}
+
+button {
+    background-color: beige;
+    width: 200px;
+    height: 50px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    margin: 10px auto;
+    align-content: center;
+    text-align: center;
+    background-image: linear-gradient(to top, blue, #133ABF, #1882FF, #7A96F9);
+    color: white;
+    font-size: 25px;
+
+}
+
+button:hover {
+    background-color: #ccc;
+    border-color: #120b77;
+}
+
+.posicionador_de_texto {
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    height: 80vh;
+    margin-left: auto;
+    margin: 15px;
+    margin-bottom: auto;
+    padding: 40px;
+    border-radius: 32px;
+}
+
+
+.imagen_vacio {
+    background-image: url("Book\ icon.gif");
+    width: 200px;
+    height: 200px;
+    background-position: center;
+    background-size: cover;
+}
+
+strong {
+    font-size: 24px;
+    text-align: center;
+}
+
+p {
+    font-size: 16px;
+}
