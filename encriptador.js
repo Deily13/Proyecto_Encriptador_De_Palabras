@@ -1,5 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
     const formulario = document.getElementById('formulario');
+    const resultadoDiv = document.getElementById('resultado');
+    const textoResultado = document.getElementById('textoResultado');
+    const copiarBtn = document.getElementById('copiarBtn');
+    const imagenVacio = document.querySelector('.imagen_vacio');
+    const mensajeVacio = document.querySelector('.posicionador_de_texto strong');
+    const parrafoVacio = document.querySelector('.posicionador_de_texto p');
 
     formulario.addEventListener('submit', function(event) {
         event.preventDefault(); // Evitar que se recargue la página
@@ -20,11 +26,21 @@ document.addEventListener('DOMContentLoaded', function() {
             resultado = desencriptar(palabra);
             console.log("Texto desencriptado:", resultado);
         }
+
+        if (resultado) {
+            mostrarResultado(resultado);
+        } else {
+            ocultarResultado();
+        }
+    });
+
+    copiarBtn.addEventListener('click', function() {
+        copiarAlPortapapeles(textoResultado.textContent);
     });
 
     function esValida(texto) {
         // Permite letras minúsculas, espacios y los signos de puntuación mencionados, pero no tildes
-        return /^[a-z\s?!¿¡]+$/.test(texto) && !/[áéíóú]/.test(texto);
+        return /^[a-z\s?!¿¡,.]+$/.test(texto) && !/[áéíóú]/.test(texto);
     }
 
     function encriptar(texto) {
@@ -43,5 +59,31 @@ document.addEventListener('DOMContentLoaded', function() {
                                            .replace(/ober/g, 'o')
                                            .replace(/ufat/g, 'u');
         return desencriptada;
+    }
+
+    function mostrarResultado(texto) {
+        textoResultado.textContent = texto;
+        resultadoDiv.style.display = 'block';
+        copiarBtn.style.display = 'block';
+        imagenVacio.style.display = 'none';
+        mensajeVacio.style.display = 'none';
+        parrafoVacio.style.display = 'none';
+    }
+
+    function ocultarResultado() {
+        textoResultado.textContent = '';
+        resultadoDiv.style.display = 'none';
+        copiarBtn.style.display = 'none';
+        imagenVacio.style.display = 'block';
+        mensajeVacio.style.display = 'block';
+        parrafoVacio.style.display = 'block';
+    }
+
+    function copiarAlPortapapeles(texto) {
+        navigator.clipboard.writeText(texto).then(function() {
+            console.log('Texto copiado al portapapeles');
+        }, function(err) {
+            console.error('No se pudo copiar el texto: ', err);
+        });
     }
 });
