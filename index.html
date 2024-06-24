@@ -14,24 +14,26 @@
 
 <body>
     <div class="encriptador">
-        <div class="texto_advertencia">
-            <div class="icono"></div>
-            <h5>Solo letras minusculas y palabras sin asento</h5>
-        </div>
-        <div class="botones">
-            <button><a>Encriptador</a></button>
-            <button><a>Desencriptador</a></button>
-        </div>
+        <form action="/enviar" method="post" id="formulario">
+            <input type="text" id="palabra" name="texto" placeholder="Escribe tu texto" required>
+            <div class="texto_advertencia">
+                <div class="icono"></div>
+                <h5>Solo letras minusculas y palabras sin asento</h5>
+            </div>
+            <div class="botones">
+                <button type="submit" data-action="encriptar"><a>Encriptador</a></button>
+                <button type="submit" data-action="desencriptar"><a>Desencriptador</a></button>
+            </div>
+        </form>
     </div>
 
 
     <div class="posicionador_de_texto">
         <div class="imagen_vacio">
-            <!-- <img src="Book icon.gif"> -->
         </div>
         <strong>Ningun mensaje ha sido encontrado</strong>
         <p>Ingresa el texto que deseas encriptar y desencriptar</p>
     </div>
 </body>
-
+<script src="encriptador.js"></script>
 </html>
