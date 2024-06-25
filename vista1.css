@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
 
 /* Estilos generales */
-body {
+html, body {
     background: url(IMG-20240315-WA0006.jpg);
     display: flex;
     flex-wrap: wrap;
@@ -10,6 +10,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    margin: auto;
 }
 
 /* Estilos para el formulario de encriptación */
@@ -162,7 +163,7 @@ p {
     height: 50%;
 }
 
-@media (max-width: 936px) and (max-height: 724px) {
+@media (max-width: 936px) {
 
     .encriptador {
         height: 80vh;
