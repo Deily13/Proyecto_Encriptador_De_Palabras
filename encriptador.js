@@ -32,6 +32,9 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             ocultarResultado();
         }
+
+        // Limpia el contenido del textarea después de procesar la entrada
+        document.getElementById('palabra').value = '';
     });
 
     copiarBtn.addEventListener('click', function() {
